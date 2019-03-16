@@ -7,6 +7,10 @@ engine = require('ejs-locals');
 
 routes = require("./Routes/public");
 
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 3000;
+
 var app = express();
 app.use(bodyParser.urlencoded({extended: true}))
 
@@ -18,7 +22,7 @@ app.set('view engine', 'ejs');
 
 app.use('/', routes);
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log('Example app listening on port 3000!');
 });
 
