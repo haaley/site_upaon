@@ -16,15 +16,13 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 app.engine('ejs', engine);
 
-app.set('views',__dirname + '/views');
+app.set('views',__dirname + '/views/');
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs'); 
 
 app.use('/', routes);
 
 app.listen(port, function () {
-  console.log('Example app listening on port 3000!');
+  console.log('Example app listening on ', port);
 });
 
-console.log(process.env.GMAIL_USER);
-console.log(process.env.GMAIL_PASS);
