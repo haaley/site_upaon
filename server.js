@@ -5,7 +5,7 @@ require('dotenv').config()
 
 engine = require('ejs-locals');
 
-const publicRouter = require("./routes");
+routes = require("./Routes/public");
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: true}))
@@ -16,7 +16,7 @@ app.set('views',__dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs'); 
 
-app.use('/', publicRouter);
+app.use('/', routes);
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
