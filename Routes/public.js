@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Home page
 router.get("/", (req, res) => {
-  res.render("./index");
+  res.render("index.ejs");
 });
 
 router.post('/', function (req, res) {
