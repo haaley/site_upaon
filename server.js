@@ -4,7 +4,8 @@ require('dotenv').config()
 
 
 engine = require('ejs-locals');
-const publicRouter = require("./routes/public");
+
+const publicRouter = require("./routes");
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: true}))
